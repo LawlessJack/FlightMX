@@ -5,14 +5,15 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Create Schema 
-const activitySchema = new Schema({
-    user_id: { type: String, required: true },
-    email: { type: String, required: true },
-    ip_address: { type: String },
+const aircraftSchema = new Schema({
+    make: { type: String },
+    model: { type: String },
+    year: { type: Number },
+    tail_number: { type: String },
     note: { type: String },
     created: { type: Date, default: Date.Now },
     modified: { type: Date, default: Date.Now }
 })
 
-const Activity = mongoose.model("Activity", activitySchema);
-module.exports = Activity;
+const Aircraft = mongoose.model("Aircraft", aircraftSchema);
+module.exports = Aircraft;
