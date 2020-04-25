@@ -29,7 +29,6 @@
       "type - npm run-script getFAA"
     ],
     "getFAA": "scripts/faaImport.sh"
-
   },
   "repository": {
     "type": "git",
@@ -50,6 +49,7 @@
     "mongodb": "^3.5.6",
     "mongoose": "^5.9.10",
     "mysql": "^2.18.1",
+    "node-fetch": "^2.6.0",
     "nodemon": "^2.0.3",
     "routes": "^2.1.0"
   }

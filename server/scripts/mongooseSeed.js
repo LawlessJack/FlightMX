@@ -20,11 +20,23 @@ db.User.deleteMany({})
         process.exit(1);
     });
 
-// activity data import, populates data from /db/noSql/seeds/activity.js via index.js
-db.Activity.deleteMany({})
-    .then(() => db.Activity.collection.insertMany(seedObj.Activity))
+// aircraft data import, populates data from / db / noSql / seeds / aircraft.js via index.js
+db.Aircraft.deleteMany({})
+    .then(() => db.Aircraft.collection.insertMany(seedObj.Aircraft))
     .then((data) => {
-        console.log(`activity document: ${data.result.n} records populated!`);
+        console.log(`aircraft document: ${data.result.n} records populated!`);
+    })
+    .then(() => mongoose.disconnect())
+    .catch((err) => {
+        console.error(err);
+        process.exit(1);
+    });
+
+// loogbook data import, populates data from / db / noSql / seeds / loogbook.js via index.js
+db.Logbook.deleteMany({})
+    .then(() => db.Logbook.collection.insertMany(seedObj.Logbook))
+    .then((data) => {
+        console.log(`loogbook document: ${data.result.n} records populated!`);
     })
     .then(() => mongoose.disconnect())
     .catch((err) => {
