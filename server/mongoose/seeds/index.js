@@ -1,10 +1,12 @@
-'use strict'
-// index.js - dynamic export for mongodb seeds in folder
+// Dependencies
 const fs = require("fs");
 const path = require("path");
-const thisFile = path.basename(module.filename);
-let exportObj = {}; // export object
 
+//Global Constants
+const thisFile = path.basename(module.filename);
+const exportObj = {}; // export object
+
+// Dynamic export for mongodb seeds in folder
 fs
     .readdirSync(__dirname)
     .forEach(function (file) {

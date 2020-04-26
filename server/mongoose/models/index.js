@@ -1,8 +1,8 @@
-//Dependencies
+// Dependencies
 const fs = require("fs");
 const path = require("path");
 
-//Global Constants
+// Global Constants
 const thisFile = path.basename(module.filename);
 const exportObj = {}; // export object
 
