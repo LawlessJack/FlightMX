@@ -1,16 +1,16 @@
-'use strict'
-
+//Dependencies
 const faker = require('faker'); // fake data API
 const documents = []; // seed object
+
+//Global Constants
 const documentQty = 10; // documents to create
 
+// Load seed data
 const createFake = () => ({
     first_name: faker.name.findName(),
     last_name: faker.name.findName(),
     email: faker.internet.email(),
     note: faker.company.catchPhrase(),
-    created: new Date(Date.now()),
-    modified: new Date(Date.now())
 });
 
 for (let i = 0; i < documentQty; i++) {

@@ -1,20 +1,22 @@
-'use strict'
+// Dependencies
 const faker = require('faker'); // fake data API
+const planes = require("./aircraft"); // aircraft seed data
 
-const collectionSeed = []; // seed object
-const documentQty = 5; // documents to create
+// Global Constants
+const collectionSeed = []; // seed object for export
+const entryQty = 5; // documents per aircraft to create
 
-for (let i = 0; i < documentQty; i++) {
-    const document = {
-        // seed object goes here
-        aircraft_id: "test",
-        user_id: "test",
-        entry_date: "test",
-        entry_note: "test",
-        created: { type: Date, default: Date.Now },
-        modified: { type: Date, default: Date.Now }
-    }
-    collectionSeed.push(document);
-};
+// Load seed data
+planes.forEach(plane => {
+    for (let i = 0; i < entryQty; i++) {
+        const document = {
+            aircraft_id: "TBD",
+            tail_number: plane.tail_number,
+            entry_date: faker.date.past(),
+            entry_note: faker.lorem.paragraph(),
+        }
+        collectionSeed.push(document);
+    };
+});
 
 module.exports = collectionSeed;
