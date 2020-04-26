@@ -32,14 +32,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WilliamStephan/site-template01"
+    "url": "git+git@github.com:UT-The-A-Team/FlightMX.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/WilliamStephan/site-template01/issues"
+    "url": "git@github.com:UT-The-A-Team/FlightMX.git/issues"
   },
-  "homepage": "https://github.com/WilliamStephan/site-template01#readme",
+  "homepage": "git@github.com:UT-The-A-Team/FlightMX.git#readme",
   "dependencies": {
     "concurrently": "^5.1.0",
     "dotenv": "^8.2.0",
