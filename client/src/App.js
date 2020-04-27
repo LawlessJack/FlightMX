@@ -1,23 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import background from './assets/images/sr71.jpg';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Button from 'react-bootstrap/Button';
+// import './App.css';
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Jumbotron>
+          <h2>FlightMX</h2>
+          <p>by the A-Team! We pity the foo...</p>
+          <Button>Bootstrap Button</Button>
+        </Jumbotron>
+        <img src={background} className="App-logo" alt="logo" />
       </header>
     </div>
   );
