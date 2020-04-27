@@ -15,5 +15,16 @@ const logbookSchema = new Schema({
     modified: { type: Date, default: Date.Now }
 })
 
+// chainable query helpers - db.Logbook.findOne().byTail('OMOOAFM1281').exec(function (err, planes) {console.log(planes);});
+logbookSchema.query.byTail = function (tail_number) {
+    return this.where({ tail_number: new RegExp(tail_number, 'i') });
+};
+logbookSchema.query.byAircraftId = function (aircraft_id) {
+    return this.where({ aircraft_id: new RegExp(aircraft_id, 'i') });
+};
+logbookSchema.query.byType = function (type) {
+    return this.where({ type: new RegExp(type, 'i') });
+};
+
 const Logbook = mongoose.model("Logbook", logbookSchema);
 module.exports = Logbook; 

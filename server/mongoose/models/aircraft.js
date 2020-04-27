@@ -17,5 +17,16 @@ const aircraftSchema = new Schema({
     modified: { type: Date, default: Date.Now }
 })
 
+// chainable query helpers - db.Aircraft.findOne().byTail('OMOOAFM1281').exec(function (err, planes) {console.log(planes);});
+aircraftSchema.query.byTail = function (tail_number) {
+    return this.where({ tail_number: new RegExp(tail_number, 'i') });
+};
+aircraftSchema.query.byMake = function (make) {
+    return this.where({ make: new RegExp(make, 'i') });
+};
+aircraftSchema.query.byModel = function (model) {
+    return this.where({ model: new RegExp(model, 'i') });
+};
+
 const Aircraft = mongoose.model("Aircraft", aircraftSchema);
 module.exports = Aircraft;
