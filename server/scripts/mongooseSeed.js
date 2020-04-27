@@ -9,6 +9,14 @@ mongoose.connect(
     { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
+// loop array of mongoDB collection names.
+Object.keys(mongoose.connection.collections).forEach(e => {
+    let collectionName = e.substring(1, 0).toUpperCase() + e.substring(1, e.length);
+    console.log(collectionName)
+});
+
+
+
 // Drops existing collections.
 mongoose.connection.dropDatabase();
 console.log("Existing MongoDB dropped and recreated from mongoose/models\n");

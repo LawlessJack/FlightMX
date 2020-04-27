@@ -73,7 +73,7 @@ if ! [ -f "faaImport.lock" ]; then
     # Loops through all .txt files in the faaData folder, comparing prior download, if data is different text file 
     # is converted to json via csvtojson module (www.npmjs.com/package/csvtojson) removing whitespace and creating a 
     # portable import file.
-      printf "\nFAA JSON file modifications: %s\n" 
+    printf "\nFAA JSON file modifications: %s\n" 
     for f in *.txt; do  
         processFlag=0 # 0 - no, 1 - yes
         cmp --silent $f "$(basename $f .txt).old" && rm -f $f || processFlag=1 

@@ -10,8 +10,8 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd ../client && npm run start",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build",
+    "install": "cd ../client && npm install",
+    "build": "cd ../client && npm run build",
     "heroku-postbuild": "**npm run build",
     "@COMENT_mongooseSeed": [
       "type - npm run-script mongooseSeed"
@@ -32,14 +32,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WilliamStephan/site-template01"
+    "url": "git+git@github.com:UT-The-A-Team/FlightMX.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/WilliamStephan/site-template01/issues"
+    "url": "git@github.com:UT-The-A-Team/FlightMX.git/issues"
   },
-  "homepage": "https://github.com/WilliamStephan/site-template01#readme",
+  "homepage": "git@github.com:UT-The-A-Team/FlightMX.git#readme",
   "dependencies": {
     "concurrently": "^5.1.0",
     "dotenv": "^8.2.0",
